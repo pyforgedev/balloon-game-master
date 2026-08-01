@@ -2,22 +2,21 @@
 
 ## Project
 
-Simple JavaScript balloon-shooting game — static HTML/CSS/JS, no build system, no package manager.
+Interactive JavaScript balloon-shooting game — static HTML/CSS/JS with modern UI/UX improvements, no build system, no package manager.
 
 ## Files
 
 | File | Role |
 |---|---|
-| `index.html` | Entry point, loads jQuery CDN + `script.js` + `main.css` |
-| `script.js` | Game logic: spawns balloons, handles clicks, score counter, replay |
-| `main.css` | Styling, balloon/score layout |
-| `fireball.wav` | Pop sound effect (loaded by `script.js`) |
-| `Shotgun.mp3` | Unused audio asset |
+| `index.html` | Entry point, loads jQuery CDN + `script.js` + `main.css`, contains DOM layout |
+| `script.js` | Game logic: spawns SVG balloons sequentially, handles crosshair shot mechanics, Web Audio API sound loop, settings state, score tracker |
+| `main.css` | Modern styling, glassmorphism UI, custom crosshair cursors, floating/fade keyframe animations |
+| `Shotgun.mp3` | Active audio asset used for the pop shot sound effect |
 
 ## Key details
 
-- jQuery loaded from CDN (`ajax.googleapis.com`), no local install needed
-- `Shotgun.mp3` is not referenced in any code
-- No build, test, lint, or typecheck commands exist
-- To verify: open `index.html` in a browser
+- jQuery loaded from CDN (`ajax.googleapis.com`), no local installation needed
+- Custom BGM music synthesized dynamically on runtime using Web Audio API (Triangle/Sine oscillator loop)
+- Integrated toggle switches in the Settings panel for individual BGM and SFX controls
+- To verify: open `index.html` in a web browser
 - `.gitattributes` normalizes line endings; `.gitignore` ignores OS/Windows artifacts
